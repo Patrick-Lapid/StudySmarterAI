@@ -3,7 +3,7 @@
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace !important;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -86,13 +86,23 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+
+    /* background: rgb(0,7,42); */
+    /* background: linear-gradient(90deg, rgba(0,7,42,1) 0%, rgba(0,35,255,1) 100%); */
+    background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)) !important;
+
+    
+      
+    /* background-image: radial-gradient(gray 1px, transparent 0); */
+    /* background-size: 40px 40px;
+    background-position: -19px -19px; */
+
+      
 }
 
 a {
