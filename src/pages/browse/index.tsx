@@ -1,6 +1,5 @@
 import Head from 'next/head'
 // import 'bootstrap/dist/css/bootstrap.css'
-import {questions} from "../../../data/questions";
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
@@ -26,28 +25,12 @@ export default function Browse() {
           
         </div>
 
-        <div className={styles.center}>
-            <h2 className={inter.className}>Q: FlashCard</h2>
-        </div>
+        <Link className={styles.center} href={`/browse/1`}>
+            <h2 className={inter.className}>Browse All Flashcards</h2>
+        </Link>
 
-        <div className={styles.grid}>
-            <div
-                className={styles.button}
-            >
-                <h2 className={inter.className}>
-                <span>&lt;- Prev</span>
-                </h2>
-            </div>
+        <div></div>
 
-            <Link
-                href={`browse/${questions[0]._id.$oid}`}
-                className={styles.button}
-            >
-                <h2 className={inter.className}>
-                <span>Next -&gt;</span>
-                </h2>
-            </Link>
-        </div>
       </main>
     </>
   )

@@ -3,9 +3,10 @@ import {questions} from "../../../../data/questions";
 import styles from '@/styles/Home.module.css'
 import { Inter } from "next/font/google";
 import { useState } from "react";
+import Link from "next/link";
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Browse({question, answer} : any) {
+export default function Browse({question, answer, index} : any) {
     const [isFlipped, toggleFlipped] = useState(false);
     
     return (
@@ -34,21 +35,30 @@ export default function Browse({question, answer} : any) {
           </div>}
   
           <div className={styles.grid}>
-              <div
-                  className={styles.button}
-              >
-                  <h2 className={inter.className}>
-                  <span>&lt;- Prev</span>
-                  </h2>
-              </div>
-  
-              <div
-                  className={styles.button}
-              >
-                  <h2 className={inter.className}>
-                  <span>Next -&gt;</span>
-                  </h2>
-              </div>
+            {index > 0 ?
+                <Link
+                    href={`${index}`}
+                    className={styles.button}
+                >
+                    <h2 className={inter.className}>
+                    <span>&lt;- Prev</span>
+                    </h2>
+                </Link>
+            :   
+                <div></div>
+            }
+              
+            {index < questions.length - 1 && 
+                <Link
+                    href={`${index + 2}`}
+                    className={styles.button}
+                    >
+                    <h2 className={inter.className}>
+                    <span>Next -&gt;</span>
+                    </h2>
+                </Link>
+            }
+              
           </div>
         </main>
       </>
@@ -60,26 +70,26 @@ export async function getStaticProps(context : any) {
     // Create an array of paths for each category
     // const question = "TEST QUESTION for " + context.params.flashcard;
     // const answer  = "TEST ANSWER";
+    let index = parseInt(context.params.flashcard) - 1;
 
-    const question = questions[0].question;
-    const answer = questions[0].answer;
+    const question = questions[index].question;
+    const answer = questions[index].answer;
     
     // Return the paths as props
     return {
       props : {
         question,
-        answer
+        answer,
+        index
       }
     }
 }
 
 export async function getStaticPaths() {
-
-    // console.log(questions)
     
     // Create an array of paths for each category
-    const paths = questions.map((flashcard : any) => ({
-      params: { flashcard: flashcard._id.$oid.toString() }
+    const paths = questions.map((flashcard : any, index : number) => ({
+      params: { flashcard: index.toString() }
     }));
     
     // Return the paths as props
