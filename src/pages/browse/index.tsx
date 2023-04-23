@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
+import { Search } from 'tabler-icons-react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,12 +19,14 @@ export default function Browse() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          
-        </div>
+            <p>
+                <Search></Search>
+                <code className={styles.code}>Search</code>
+            </p>
+
+            <input></input>
+            
+          </div>
 
         <Link className={styles.center} href={`/browse/1`}>
             <h2 className={inter.className}>Browse All Flashcards</h2>

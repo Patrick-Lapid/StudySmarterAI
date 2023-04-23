@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.css'
 import { Inter } from "next/font/google";
 import { useState } from "react";
 import Link from "next/link";
+import { Search } from "tabler-icons-react";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Browse({question, answer, index} : any) {
@@ -20,9 +21,11 @@ export default function Browse({question, answer, index} : any) {
         <main className={styles.main}>
           <div className={styles.description}>
             <p>
-              Get started by editing&nbsp;
-              <code className={styles.code}>src/pages/index.tsx</code>
+                <Search></Search>
+                <code className={styles.code}>Search</code>
             </p>
+
+            <input></input>
             
           </div>
   
