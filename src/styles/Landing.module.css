@@ -1,0 +1,19 @@
+.hero {
+    text-align: center;
+    height: 60vh;
+    padding: 6rem;
+    
+}
+
+.heroText {
+    margin-top: 2.5rem;
+    line-height: 1.5;
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.heroSubtext {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: gray;
+}

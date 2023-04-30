@@ -24,7 +24,7 @@ import { useDisclosure } from '@mantine/hooks';
 import {
 IconChevronDown,
 } from '@tabler/icons-react';
-import { Notebook } from 'tabler-icons-react';
+import { Brain, Notebook, Robot } from 'tabler-icons-react';
 import Link from 'next/link';
   
 const useStyles = createStyles((theme) => ({
@@ -63,18 +63,6 @@ link: {
     }),
 },
 
-subLink: {
-    width: '100%',
-    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-    borderRadius: theme.radius.md,
-
-    ...theme.fn.hover({
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-    }),
-
-    '&:active': theme.activeStyles,
-},
-
 dropdownFooter: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
     margin: `calc(${theme.spacing.md} * -1)`,
@@ -107,15 +95,21 @@ const Navbar = (props: Props) => {
     const { classes, theme } = useStyles();
 
     return (
-      <Box pb={120}>
-        <Header height={60} px="md">
+      <Box>
+        <Header sx={{ borderBottom: 0 }} height={60} px="md" mb={10}>
         
-          <Group position="apart" sx={{ height: '100%' }}>
+          <Group position="apart" my={"auto"} sx={{ height: '100%' }}>
             
           <Link href={"/"}>
             <Group className={classes.heroTitle}  >
                 <Text className={classes.title}>StudySmarter.AI</Text>
-                <Notebook className={classes.emoji} size={27} />
+                {/* <Notebook className={classes.emoji} size={27} /> */}
+                <Robot
+                    size={30}
+                    strokeWidth={2}
+                    className={classes.emoji}
+                    color={'#40bf61'}
+                />
             </Group>
         </Link>
   
