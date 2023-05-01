@@ -102,14 +102,14 @@ const Navbar = (props: Props) => {
             
           <Link href={"/"}>
             <Group className={classes.heroTitle}  >
-                <Text className={classes.title}>StudySmarter.AI</Text>
+                <Text className={classes.title}>StudySmarter.<Text variant="gradient" gradient={{ from: 'indigo', to: 'cyan', deg: 45 }} style={{display: "inline"}}>ai</Text></Text>
                 {/* <Notebook className={classes.emoji} size={27} /> */}
-                <Robot
+                {/* <Robot
                     size={30}
                     strokeWidth={2}
                     className={classes.emoji}
                     color={'#40bf61'}
-                />
+                /> */}
             </Group>
         </Link>
   

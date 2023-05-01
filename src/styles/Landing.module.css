@@ -1,6 +1,6 @@
 .hero {
     text-align: center;
-    height: 60vh;
+    min-height: 80vh;
     padding: 6rem;
     
 }
@@ -16,4 +16,48 @@
     font-size: 1.5rem;
     font-weight: 400;
     color: gray;
+}
+
+.infoSection {
+
+    min-height: 60vh;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: space-evenly;
+    background-color: bisque;
+}
+
+.infoBlock {
+    margin: auto 3rem auto;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    /* margin-bottom: 4rem; */
+    align-items: center;
+    justify-content: space-around;
+}
+
+.infoCard {
+    border: 1px gray solid;
+    border-radius: var(--border-radius) !important;
+    padding: 2rem;
+    min-width: 30vw;
+    background-color: white;
+}
+
+.topicSection {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+}
+
+.topicTitle{
+    line-height: 1.5;
+    font-size: 2.75rem;
+}
+
+.topicGrid{
+    display: grid;
 }

@@ -16,11 +16,9 @@ export default function Layout({children} : any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className={styles.main}>
-        
-        {children}
-
-      </main>
+      
+      <div className={styles.main}></div>
+      {children}
     </>
   )
 }
